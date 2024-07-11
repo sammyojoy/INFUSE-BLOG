@@ -1,0 +1,153 @@
+:root {
+
+--text : #2B2D42;
+
+--ligght: #8D99AE;
+
+--icon:#EDF2F4;
+
+--sunred:#EF233C;
+
+--mainred:#D90429;
+
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+}
+
+
+
+
+
+
+
+.navcontainer{
+  /* padding-bottom:  40px; */
+  height: 70%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+ 
+  margin: auto;
+}
+
+.nav{
+ 
+  backdrop-filter: blur(10px);
+  height:80px;
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+  right: 0px;
+  left:0px;
+  top:0px;
+  
+}
+
+
+.socials{
+  width: 120px;
+  /* background-color: green; */
+  display: flex;
+  /* flex: 1 */
+
+}
+
+.smedia{
+  background-color: var(--icon);
+  width: 16px;
+  margin:10px;
+  
+  
+}
+#navlogo{
+  flex: 1;
+ 
+  
+
+
+}
+.logo{
+  height: 50%;
+  padding-left: 90PX;
+  margin-top: 8px;
+text-align: center;
+
+  
+  
+}
+
+.logo::-webkit-scrollbar{
+  height: 50%;
+  padding-left: 85px;
+  margin-top: 8px;
+  
+}
+
+
+
+
+
+
+
+.navLinks{
+  /* background-color: rgb(179, 179, 255); */
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  max-width: 450px;
+  
+ }
+
+.navItems a{
+    text-decoration: none;
+    margin: 1rem;
+    font-size: 16px;
+    font-weight: 200;
+    
+ }
+
+
+
+.btns {
+  margin: 0.2rem ;
+ 
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  
+}
+
+
+ .start{
+  /* min-width: 40px; */
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 20px; 
+    color: #c40f9c;
+    background-color: white;
+    border-color: transparent;
+}
+
+.Login{
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 20px; 
+    border: solid 0.5px;
+    color:white;
+    /* border-color: var(--sunred); */
+    background-color: none;
+  width: 50px;
+    
+}
+
+
+   
+ 
+
+
+
+
+

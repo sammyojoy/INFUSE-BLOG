@@ -1,0 +1,88 @@
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/scc/userpage.css') }}">
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- ============================================================================== -->
+
+<div class="groundImage">
+<div class="backgroundGradient"></div>
+<div class="profileContainer">
+    <div class="profileImageInfo">
+        <div class="profilePhoto">
+            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f5/f59c377e8523996d052ba2429b32680c191687d5_full.jpg ">
+            <div class="name">
+                <h3 id="username"> {{ user.username }}</h3>
+                
+                <h4>@cammilaant</h4>
+            </div>
+        </div>
+        <div class="profileinfo">
+            <!-- <h2 class="userinfo">User information goes here and the rest of the profile info</h2> -->
+            <p></p>
+            
+            <a href="/edit_profile" class="btn_btn">Your profile</a>
+
+            <a href="/userpost" class="btn_btn">Create Post</a>
+            
+            
+            <!-- <div class="navcontainer" id="colorNav">
+                <div class="socials" id="socials">
+                    <img src="{{ url_for('static', filename='assets/instagram.svg') }}" alt="Instagram" class="smedia"/>
+                    <img src="{{ url_for('static', filename='assets/twitter.svg') }} "  alt="Twitter" class="smedia"/>
+                    <img src="{{ url_for('static', filename='assets/face.svg') }} "  alt="Facebook" class="smedia"/>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+</div>
+  
+
+<!-- ===================================================================== -->
+<!-- <div class="container">
+<div class="btnwrap">
+    <div class="userPreference">
+        <button class="btn btn-dark">Created</button>
+        <button class="btn btn-dark">Saved</button>
+    </div>
+    <div class="category">
+        <button class="btn btn-light">Wedding</button>
+        <button class="btn btn-light">Men Suits</button>
+        <button class="btn btn-light">Ankara</button>
+        <button class="btn btn-light">Wedding</button>
+        <button class="btn btn-light">Local Shoes</button>
+        <button class="btn btn-light">Kaba and Slit</button>
+    </div>
+</div>
+</div> -->
+
+
+
+
+<ul>
+    {% for post in posts %}
+        <li>
+            <h2><a href="/post/{{ post.id }}">{{ post.title }}</a></h2>
+            <p>{{ post.content[:100] }}...</p>
+            <a href="/edit/{{ post.id }}">Edit</a>
+            <a href="/delete/{{ post.id }}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+
+<!-- ======================================== -->
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- {% endblock %} -->
+<script src="nav.js"></script>
+<script src="hero.js"></script>
+<script src="search2.js"></script>

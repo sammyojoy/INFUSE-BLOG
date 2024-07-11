@@ -1,0 +1,65 @@
+
+
+<!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Infused</title>
+        {% else %}
+        <title>Welcome to Infused</title>
+        {% endif %}
+       
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/scc/nav.css') }}">
+       
+        
+    </head>
+    <body>
+        <nav class="nav" id="animatedDiv">
+            <div class="navcontainer" id="colorNav">
+                <div class="socials" id="socials">
+                  
+                   
+                    <a href="#"><img src="{{ url_for('static', filename='assets/instagram.svg') }}" alt="" class="smedia"/></a>
+                    <a href="#"><img src="{{ url_for('static', filename='assets/twitter.svg') }}" alt="" class="smedia"/></a>
+                    <a href="#"><img src="{{ url_for('static', filename='assets/face.svg') }}" alt="" class="smedia"/></a>
+                </div>
+                <div class="logo" id="navlogo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='assets/logo_red.svg') }}" alt="" class="logo"/>
+                    </a>
+                </div>
+                <ul     class="navLinks">
+                    <li  style="color: white; text-decoration: none;" class="navItems">
+                        <a href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                    <li  style="color: white; text-decoration: none;" class="navItems">
+                        <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+                    </li>
+                    <li  style="color: white; text-decoration: none;" class="navItems">
+                        <a href="{{ url_for('explore') }}">Explore</a>
+                    </li>
+                </ul>
+                <div class="btns">
+                    <a href="{{ url_for('login') }}" class="Login">Log In</a>
+                    {% if current_user.is_anonymous %}
+                    <a href="{{ url_for('register') }}" class="start">Get started</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </body>
+</html>
+
+

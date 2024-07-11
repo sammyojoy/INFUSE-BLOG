@@ -1,0 +1,72 @@
+<!-- userpost.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <!-- Add any necessary CSS links or stylesheets here -->
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <!-- Display form for creating new posts -->
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Create a New Post</legend>
+            <!-- Post Content -->
+            <div>
+                {{ form.post.label }}
+                <br>
+                {{ form.post(size=50) }}
+                {% for error in form.post.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <!-- Image Upload -->
+            <div>
+                {{ form.image.label }}
+                <br>
+                {{ form.image }}
+                {% for error in form.image.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <!-- Image Description -->
+            <div>
+                {{ form.description.label }}
+                <br>
+                {{ form.description }}
+                {% for error in form.description.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+        </fieldset>
+        <br>
+        <button type="submit">Submit Post</button>
+    </form>
+
+    <hr>
+
+    <!-- Display existing posts -->
+    {% if posts %}
+        <h2>Existing Posts</h2>
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <p>{{ post.body }}</p>
+                    {% if post.image_file %}
+                        <img src="{{ url_for('static', filename='profile_pics/' + post.image_file) }}" alt="{{ post.image_description }}">
+                    {% endif %}
+                    <p>Author: {{ post.author.username }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No posts yet.</p>
+    {% endif %}
+
+</body>
+</html>

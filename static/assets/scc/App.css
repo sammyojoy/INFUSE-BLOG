@@ -1,0 +1,54 @@
+/* 
+.App {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.App img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+ */
+
+*
+
+
+
+
+
+
+
+
+
+
+
+
+ .blogTitle{
+
+  width: 65%;
+ height: 60px;
+  margin: auto;
+  background-color:rgb(248, 240, 240) ;
+ 
+}
+
+.blogTitle h2{
+  font-size: 24px;
+  font-weight: 500;
+  padding: 20px;
+  margin: 0;
+}  
+
+
+
+.gallerySeperator{
+  height: 100vh;
+  background-color: transparent;
+}
